@@ -1,67 +1,66 @@
-<div id="form-container">
-    <form [formGroup]="profileForm" class="form-container">
-        <mat-card>
-    
-          <mat-card-header>
-            <mat-card-title>Profile Information</mat-card-title>
-          </mat-card-header>
-    
-          <mat-card-content>
-            <div class="row">
-    
-              <div>
-                <mat-form-field class="full-width">
-                    <input matInput placeholder="First Name" formControlName="firstName">
-                </mat-form-field>
-              </div>
-    
-              <div>
-                <mat-form-field class="full-width">
-                    <input matInput placeholder="Last Name" formControlName="lastName">
-                </mat-form-field>
-              </div>
-    
-            </div>
-    
-            <div class="row">
-              <div>
-               <mat-form-field class="full-width">
-                <input matInput type="number" placeholder="Age" formControlName="age">
-               </mat-form-field>
-              </div>
-              
-              <div>
-                <mat-checkbox class="full-width" formControlName="prevAttended">Previously Attended</mat-checkbox>               
-                </div>
-    
-            </div>
-    
-            <div class="row">
-                <div>
-                    <div>
-                        <mat-radio-group formControlName="sport">
-                            <mat-radio-button *ngFor="let sport of sports" [value]="sport">{{ sport }}</mat-radio-button>
-                        </mat-radio-group>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="row">
-                <div>
-                    <div>
+<div fxLayout="column" fxLayoutAlign="center center" id="form-container">
+    <form [formGroup]="profileForm" class="form-container" fxLayout="column" fxLayout.lt-md="row" fxLayoutAlign="center start" fxFlex="100%">
+      <mat-card fxFlex.lt-md="90%" fxFlex="70%">
+        <mat-card-header>
+          <mat-card-title>Profile Information</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+                <div class="row">
+                    <div fxFlex="50%">
                         <mat-form-field class="full-width">
-                            <textarea matInput placeholder="Comment" formControlName="comment"></textarea>
+                            <input matInput placeholder="First Name" formControlName="firstName">
+                        </mat-form-field>
+                    </div>
+
+                    <div fxFlex="50%">
+                        <mat-form-field class="full-width">
+                            <input matInput placeholder="Last Name" formControlName="lastName">
                         </mat-form-field>
                     </div>
                 </div>
-            </div>
-    
-          </mat-card-content>
-    
-          <mat-card-actions>
-            <button (click)="onSubmit()" mat-raised-button color="primary">Submit</button>
-          </mat-card-actions>
-    
+
+                <div class="row">
+                    <div fxFlex="100%">
+                        <mat-form-field class="full-width">
+                            <input matInput type="number" placeholder="Age" formControlName="age">
+                        </mat-form-field>
+                    </div>
+                    <div fxFlex="50%">
+                        <mat-checkbox class="full-width" formControlName="prevAttended">Previously Attended</mat-checkbox>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <p>Preffered sport:</p>
+                </div>
+                
+                <div class="row">
+                    <div fxFlex="100%">
+                        <div>
+                            <mat-radio-group formControlName="sport">
+                                <mat-radio-button *ngFor="let sport of sports" [value]="sport">{{ sport }}</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div fxFlex="100%">
+                        <div>
+                            <mat-form-field class="full-width">
+                                <textarea matInput placeholder="Comment" formControlName="comment"></textarea>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+
+            </mat-card-content>
+
+            <mat-card-actions>
+                <button (click)="onSubmit()" mat-raised-button color="primary">Submit</button>
+            </mat-card-actions>
+
         </mat-card>
     </form>
 </div>
