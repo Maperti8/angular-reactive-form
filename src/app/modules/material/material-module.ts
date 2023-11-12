@@ -5,6 +5,10 @@ import { MatRadioModule } from '@angular/material/radio';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatGridListModule } from '@angular/material/grid-list';
+// angular flex layout
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 
 @NgModule({
@@ -14,7 +18,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     ReactiveFormsModule,
     MatRadioModule,
     MatCardModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatGridListModule,
+    FlexLayoutModule
   ],
   exports: [
     MatButtonModule,
@@ -22,7 +28,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     ReactiveFormsModule,
     MatRadioModule,
     MatCardModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatGridListModule,
+    FlexLayoutModule,
   ]
 })
 export class MaterialModule {}
