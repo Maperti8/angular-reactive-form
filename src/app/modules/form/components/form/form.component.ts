@@ -19,13 +19,17 @@ export class FormComponent implements OnInit {
       firstName: ['', [Validators.required, Validators.maxLength(25)]],
       lastName: ['', [Validators.required, Validators.maxLength(50)]],
       age: [null, [Validators.required, Validators.min(0)]],
-      prevAttended: [false, [Validators.required]],
+      prevAttended: [false],
       sport: ['', [Validators.required]],
-      comment: ['', [Validators.required, Validators.maxLength(4000)]],
+      comment: ['', [Validators.maxLength(4000)]],
     });
   }
 
   onSubmit() {
-    console.log(this.profileForm.value);
+    if (this.profileForm.valid) {
+      console.log(this.profileForm.value);
+    } else {
+      this.profileForm.markAllAsTouched();
+    }
   }
 }
