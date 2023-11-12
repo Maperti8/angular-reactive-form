@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+// modal import 
+import { MatDialog } from '@angular/material/dialog';
+import { ModalComponent } from '../modal/modal.component';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -12,7 +16,7 @@ export class FormComponent implements OnInit {
   sports: string[] = ['Football', 'Volleyball', 'Swimming', 'Badminton', 'Table Tennis'];
   profileForm!: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, public dialog: MatDialog, private breakpointObserver: BreakpointObserver) {}
 
   ngOnInit() {
     this.profileForm = this.fb.group({
@@ -27,9 +31,31 @@ export class FormComponent implements OnInit {
 
   onSubmit() {
     if (this.profileForm.valid) {
-      console.log(this.profileForm.value);
+      // Form is valid, submit the form
+      console.log('Form submitted:', this.profileForm.value);
+      this.openModal('Form submitted successfully');
     } else {
+      // Form is invalid, show an error 
       this.profileForm.markAllAsTouched();
+      this.openModal('Form is invalid. Please check the fields.');
     }
   }
+  
+  openModal(message: string) {
+    let modalWidth = '500px';
+    let modalHeight = '100px';
+  
+    // Config for small screens
+    if (this.breakpointObserver.isMatched(Breakpoints.Small)) {
+      modalWidth = '90%';
+      modalHeight = '90%';
+    }
+  
+    const dialogRef = this.dialog.open(ModalComponent, {
+      width: modalWidth,
+      height: modalHeight,
+      data: { message } 
+    });
+  }
+  
 }

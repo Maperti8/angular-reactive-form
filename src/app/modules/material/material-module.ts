@@ -1,3 +1,4 @@
+// material components
 import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
@@ -5,7 +6,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatGridListModule } from '@angular/material/grid-list';
+import { MatDialogModule } from '@angular/material/dialog';
 // angular flex layout
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -19,8 +20,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatRadioModule,
     MatCardModule,
     MatCheckboxModule,
-    MatGridListModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatDialogModule,
   ],
   exports: [
     MatButtonModule,
@@ -29,8 +30,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatRadioModule,
     MatCardModule,
     MatCheckboxModule,
-    MatGridListModule,
-    FlexLayoutModule,
+    MatDialogModule,
+    FlexLayoutModule
   ]
 })
 export class MaterialModule {}

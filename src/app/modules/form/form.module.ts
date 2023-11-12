@@ -4,10 +4,11 @@ import { CommonModule } from '@angular/common';
 import { FormComponent } from './components/form/form.component';
 import { FormRoutingModule } from './form-routing';
 import { MaterialModule } from '../material/material-module';
+import { ModalComponent } from './components/modal/modal.component';
 
 
 @NgModule({
-  declarations: [FormComponent],
+  declarations: [FormComponent, ModalComponent],
   imports: [
     CommonModule,
     FormRoutingModule,
