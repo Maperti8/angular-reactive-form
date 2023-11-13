@@ -36,11 +36,11 @@ export class FormComponent implements OnInit {
   onSubmit() {
     if (this.profileForm.valid) {
       const formData: FormModel = this.profileForm.value;
-      console.log('Form submitted:', formData);
-      this.openModal('Form submitted successfully');
+      console.log('Forma zaslaná:', formData);
+      this.openModal('Form úspešne zaslaná');
     } else {
       this.profileForm.markAllAsTouched();
-      this.openModal('Form is invalid. Please check the fields.');
+      this.openModal('Forma je neplatná. Prosím skontrolujte polia.');
     }
   }
 
