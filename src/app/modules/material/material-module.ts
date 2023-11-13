@@ -7,6 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDialogModule } from '@angular/material/dialog';
+import {MatToolbarModule} from '@angular/material/toolbar';
 // angular flex layout
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -20,8 +21,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatRadioModule,
     MatCardModule,
     MatCheckboxModule,
-    FlexLayoutModule,
     MatDialogModule,
+    MatToolbarModule,
+    FlexLayoutModule,
   ],
   exports: [
     MatButtonModule,
@@ -31,7 +33,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatCardModule,
     MatCheckboxModule,
     MatDialogModule,
-    FlexLayoutModule
+    MatToolbarModule,
+    FlexLayoutModule,
   ]
 })
 export class MaterialModule {}

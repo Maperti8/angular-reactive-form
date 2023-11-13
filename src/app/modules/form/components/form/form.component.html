@@ -1,4 +1,4 @@
-<div fxLayout="column" fxLayoutAlign="center center" id="form-container">
+<div fxLayout="column" fxLayoutAlign="center center" class="form-container">
     <form [formGroup]="profileForm" class="form-container" fxLayout="column" fxLayout.lt-md="row" fxLayoutAlign="center start" fxFlex="100%">
       <mat-card fxFlex.lt-md="90%" fxFlex="70%">
   
@@ -34,7 +34,7 @@
               </mat-form-field>
             </div>
             <div fxFlex="50%">
-              <mat-checkbox class="full-width" formControlName="prevAttended">Previously Attended</mat-checkbox>
+              <mat-checkbox class="full-width" formControlName="prevAttended" color="primary"><p>Previously attended</p></mat-checkbox>
             </div>
           </div>
   
@@ -46,7 +46,7 @@
             <div fxFlex="100%">
               <div>
                 <mat-radio-group formControlName="sport">
-                  <mat-radio-button *ngFor="let sport of sports" [value]="sport">{{ sport }}</mat-radio-button>
+                  <mat-radio-button *ngFor="let sport of sports" [value]="sport" color="primary">{{ sport }}</mat-radio-button>
                 </mat-radio-group>
                 <ng-container *ngIf="profileForm.get('sport')?.touched && profileForm.get('sport')?.hasError('required')">
                   <mat-error>Sport is required</mat-error>
@@ -66,7 +66,8 @@
             </div>
           </div>
         </mat-card-content>
-  
+        
+        <div class="row"></div>
         <mat-card-actions>
           <button (click)="onSubmit()" mat-raised-button color="primary">Submit</button>
         </mat-card-actions>
