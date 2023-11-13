@@ -1,14 +1,18 @@
+// form.component.ts
 import { Component, OnInit } from '@angular/core';
-// modal import 
+// form interface
+import { FormModel } from '../../interfaces/form.interface';
+// modal components
 import { MatDialog } from '@angular/material/dialog';
 import { ModalComponent } from '../modal/modal.component';
+// breakpoints for smaller screens 
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
-  styleUrl: './form.component.scss'
+  styleUrls: ['./form.component.scss']
 })
 export class FormComponent implements OnInit {
 
@@ -31,31 +35,29 @@ export class FormComponent implements OnInit {
 
   onSubmit() {
     if (this.profileForm.valid) {
-      // Form is valid, submit the form
-      console.log('Form submitted:', this.profileForm.value);
+      const formData: FormModel = this.profileForm.value;
+      console.log('Form submitted:', formData);
       this.openModal('Form submitted successfully');
     } else {
-      // Form is invalid, show an error 
       this.profileForm.markAllAsTouched();
       this.openModal('Form is invalid. Please check the fields.');
     }
   }
-  
+
   openModal(message: string) {
     let modalWidth = '500px';
     let modalHeight = '100px';
-  
+
     // Config for small screens
     if (this.breakpointObserver.isMatched(Breakpoints.Small)) {
       modalWidth = '90%';
       modalHeight = '90%';
     }
-  
+
     const dialogRef = this.dialog.open(ModalComponent, {
       width: modalWidth,
       height: modalHeight,
       data: { message } 
     });
   }
-  
 }
