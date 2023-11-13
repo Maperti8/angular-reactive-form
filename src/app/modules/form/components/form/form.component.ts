@@ -54,7 +54,7 @@ export class FormComponent implements OnInit {
       modalHeight = '90%';
     }
 
-    const dialogRef = this.dialog.open(ModalComponent, {
+    this.dialog.open(ModalComponent, {
       width: modalWidth,
       height: modalHeight,
       data: { message } 

@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { HomepageComponent } from './homepage.component';
+import { MaterialModule } from '../modules/material/material-module';
 
 describe('HomepageComponent', () => {
   let component: HomepageComponent;
@@ -8,7 +8,8 @@ describe('HomepageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HomepageComponent]
+      imports: [MaterialModule],  
+      declarations: [HomepageComponent], 
     })
     .compileComponents();
     
