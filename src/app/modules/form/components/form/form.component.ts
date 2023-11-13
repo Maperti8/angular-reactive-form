@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 // form interface
 import { FormModel } from '../../interfaces/form.interface';
-// modal components
+// modal 
 import { MatDialog } from '@angular/material/dialog';
 import { ModalComponent } from '../modal/modal.component';
 // breakpoints for smaller screens 
