@@ -11,7 +11,7 @@
           <div class="row" fxLayout.lt-md="column">
             <div fxFlex="100" fxLayout.lt-md="100%">
               <mat-form-field class="full-width" appearance="fill">
-                <input matInput placeholder="First Name" formControlName="firstName">
+                <input matInput placeholder="Meno" formControlName="firstName">
                 <mat-error *ngIf="profileForm.get('firstName')?.hasError('required')">Zadajte meno</mat-error>
                 <mat-error *ngIf="profileForm.get('firstName')?.hasError('maxlength')">Maximálna dĺžka je 25 charakterov</mat-error>
               </mat-form-field>
@@ -21,7 +21,7 @@
           <div class="row" fxLayout.lt-md="column">
             <div fxFlex="100" fxLayout.lt-md="100%">
               <mat-form-field class="full-width" appearance="fill">
-                <input matInput placeholder="Last Name" formControlName="lastName">
+                <input matInput placeholder="Priezvisko" formControlName="lastName">
                 <mat-error *ngIf="profileForm.get('lastName')?.hasError('required')">Zadajte priezvisko</mat-error>
                 <mat-error *ngIf="profileForm.get('lastName')?.hasError('maxlength')">Maximálna dĺžka je 25 charakterov</mat-error>
               </mat-form-field>
@@ -31,7 +31,7 @@
           <div class="row" fxLayout.lt-md="column">
             <div fxFlex="100" fxLayout.lt-md="100%">
               <mat-form-field class="full-width" appearance="fill">
-                <input matInput type="number" placeholder="Age" formControlName="age">
+                <input matInput type="number" placeholder="Vek" formControlName="age">
                 <mat-error *ngIf="profileForm.get('age')?.hasError('required')">Zadajte vek</mat-error>
                 <mat-error *ngIf="profileForm.get('age')?.hasError('min')">Vek nesmie byť negatívne číslo</mat-error>
               </mat-form-field>
@@ -65,7 +65,7 @@
             <div fxFlex="100" fxLayout.lt-md="100%">
               <div>
                 <mat-form-field class="full-width" appearance="fill">
-                  <textarea matInput placeholder="Comment" formControlName="comment"></textarea>
+                  <textarea matInput placeholder="Komentár" formControlName="comment"></textarea>
                   <mat-error *ngIf="profileForm.get('comment')?.hasError('maxlength')">Maximálna dĺžka je 4000 charakterov</mat-error>
                 </mat-form-field>
               </div>

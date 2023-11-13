@@ -17,7 +17,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class FormComponent implements OnInit {
 
   selectedSport: string = '';
-  sports: string[] = ['Football', 'Volleyball', 'Swimming', 'Badminton', 'Table Tennis'];
+  sports: string[] = ['Futbal', 'Volejbal', 'Plávanie', 'Badminton', 'Stolný tenis'];
   profileForm!: FormGroup;
 
   constructor(private fb: FormBuilder, public dialog: MatDialog, private breakpointObserver: BreakpointObserver) {}
